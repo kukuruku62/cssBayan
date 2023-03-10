@@ -1,0 +1,97 @@
+
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.accordion {
+    /* display: flex;
+    flex-direction: column; */
+    padding: 0 2rem;
+    margin: 0 auto;
+    width: 600px;
+}
+/* 
+ul {
+    width: 600px;
+    display: inline;
+    margin: 0 auto;
+} */
+
+/* .accordion__item-picture {
+    height: 200px;
+    width: 200px;
+} */
+p {
+    margin: 0;
+}
+.accordion__item-content {
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s;
+}
+
+.accordion__item_content-picture {
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    
+
+
+}
+
+.cross {
+    /* width: 30px;
+    height: 30px;
+     */
+    visibility: hidden;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+label:hover ~ .accordion__item-content {
+    max-height: 300px;
+    transition: all 0.5s;
+}
+
+
+label + input[type="radio"] {
+    max-height: 0;
+}
+
+label + input[type="radio"]:checked + .accordion__item-content {
+    max-height: 600px;
+}
+
+.accordion__item:hover .cross {
+    transform: rotate(45deg); 
+}
+
+
+.accordion-container:hover {
+    background-color: rgb(103, 99, 193);
+    transition: linear 0.5s;
+}
+
+
+/*ПЛАВНОЕ ПОЯВЛЕНИЕ КРЕКТИКОВ И ИХ ПОВОРОТ ПРИ ХОВЕРЕ/НАВЕДЕНИИ */
+.accordion-container:hover .cross {
+    visibility: visible;
+    /* transform: rotate(45deg);  */
+    transition: linear 0.3s;
+}
+
+
+
+/* .accordion:hover + #cross {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+} */
