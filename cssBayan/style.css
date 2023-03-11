@@ -42,11 +42,21 @@ a {
 .accordion-title {
     font-family: ClimateCrisis;
     font-size: 3rem;
-    border-bottom: 1px solid gray;
+ 
     padding-bottom: 1rem;
     padding-top: 2rem;
     color: brown;
 }
+
+
+.line-under-title {
+    border-bottom: 1px solid gray;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
 
 .accordion__item-title {
     font-family: ClimateCrisis;
