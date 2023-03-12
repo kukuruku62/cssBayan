@@ -112,28 +112,57 @@ a {
 
 
 
-label {
+.accordion__item-title {
     display: flex;
     justify-content: space-between;
     /* cursor: pointer; */
 }
 
-label + input[type="radio"] {
+/*СКРЫВАЕТ ЭЛЕМЕНТ РАДИО КНОПКИ !!! ПРОВЕРИТЬ БЕЗ LABEL*/
+.accordion__item-title + input[type="radio"] {
     max-height: 0;
 }
 
-label + input[type="radio"]:checked + .accordion__item-content {
+.accordion__item-title + input[type="radio"]:checked + .accordion__item-content {
     max-height: 30rem;
+    color: rgb(30, 21, 8);
     /*изменено с 600px */
 }
 
-label:hover ~ .accordion__item-content {
+
+
+
+/* .accordion__item-title + input[type="radio"]:checked ~ .accordion__item-content:active {
+   background-color: blue;
+   transition: 0;
+} */
+
+/* #second {
+    color: blue;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+ .accordion__item-title:hover ~ .accordion__item-content {
     max-height: 30rem;
     transition: linear 1s;
 }
 
 /*CHECK HOVER*/
 @media (hover: hover) {
+
+
+
 
 
 input[type="radio"]:hover ~.accordion__item-content {
@@ -150,10 +179,10 @@ input[type="radio"]:hover ~.accordion__item-content {
 }
 
 /*ИЗМЕНЕНИЕ ЦВЕТА ЗАГОЛОВКОЙ И КРЕСТОВ ПРИ НАВЕДЕНИИ КУРСОРА */
-.accordion-container:hover .accordion__item-title {
+/* .accordion-container:hover .accordion__item-title {
     color: rgb(107, 156, 110);
     transition: linear 0.5s;
-}
+} */
 
 
 /*ПРЕДЫДУЩИЙ ХОВЕР 111 МЕНЯЕТ ЦВЕТ И ЗАГОЛОВКОВ И КРЕСТИКОВ,
