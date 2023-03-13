@@ -1,0 +1,200 @@
+@font-face {
+    font-family: ClimateCrisis;
+    src: url(./assets/fonts/ClimateCrisis-Regular.ttf);
+}
+
+/* 1rem будет равен стандартным 16 px (100% от 16)
+для всего документа */
+html {
+    font-size: 100%;
+}
+
+
+@media (max-width: 1920px) {
+/* размер 1rem при медиа запросе равен 10px */
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media (max-width: 820px) {
+/* размер 1rem при медиа запросе равен 8.8px */
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 320px) {
+/* размер 1rem при медиа запросе равен 7.2px */
+    html {
+        font-size: 45%;
+    }
+}
+
+
+body {
+    scroll-behavior: smooth;
+    background-color: rgb(226, 226, 226);
+}
+
+.wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: rgb(226, 226, 226);
+}
+
+.accordion-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    cursor: pointer;
+}
+
+.accordion-container-github {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a {
+    all: initial;
+    align-self: center;
+}
+
+.github-icon {
+    width: 2em;
+    height: 2em;
+}
+
+
+.accordion-title {
+    font-family: ClimateCrisis;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+    color: brown;
+}
+
+
+.line-under-title {
+    border-bottom: 0.1rem solid gray;
+    width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+
+
+.accordion__item-title {
+    font-family: ClimateCrisis;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.accordion-picture{
+    width: 25%;
+    height: 25%;
+}
+
+
+
+.accordion__item-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 3s;
+    display: flex;
+    justify-content: center;
+    transition: all 2s;
+}
+
+
+.cross {
+    visibility: hidden;
+}
+
+
+
+.accordion__item-title {
+    display: flex;
+    
+    justify-content: space-between;
+    /* cursor: pointer; */
+}
+
+/*СКРЫВАЕТ ЭЛЕМЕНТ РАДИО КНОПКИ !!! ПРОВЕРИТЬ БЕЗ LABEL*/
+/* .accordion__item-title +  */
+input[type="radio"] {
+    max-height: 0;
+}
+
+/*ПРИ КЛИКЕ НА ЗАГОЛОВОК ЗАКРЫВАЕТ ПРЕДЫДУЩКЮ ЗАФИКСИР
+И ДЕЛАЕТ ПЕРВУЮ РАСКРЫТОЙ ПО ДЕФОЛТУ 
+input[type="radio"]:checked + .accordion__item-content {
+    max-height: 30rem; 
+}
+НИЖЕ РАЗБИТ НА ДВА*/
+
+
+/* .accordion__item-title {
+    max-height: 30rem; 
+}  ПРОВЕРИТЬ, ЛИШНИЙ*/ 
+
+input[type="radio"]:checked + .accordion__item-content {
+    max-height: 30rem; 
+}
+
+
+
+
+ /* .accordion__item-title:hover ~ .accordion__item-content {
+    max-height: 30rem;
+    transition: linear 1s;  ПРОВЕРИТЬ!!!!!!!!!!
+} */
+
+/*CHECK HOVER*/
+@media (hover: hover) {
+
+    input[type="radio"]:hover ~.accordion__item-content {
+        max-height: 30rem;
+    }
+
+    .accordion__item-content:hover {
+        max-height: 30rem;
+    }
+
+    /*ПОВОРОТ КРЕСТИКОВ КОНКР-ГО БЛОКА ПРИ ХОВЕРЕ/НАВЕДЕНИИ */
+    .accordion__item:hover .cross {
+        transform: rotate(45deg); 
+    }
+
+    /* ИЗМЕНЕНИЕ ЦВЕТА ЗАГОЛОВКОЙ И КРЕСТОВ ПРИ НАВЕДЕНИИ КУРСОРА */
+    .accordion-container:hover .accordion__item-title {
+        color: rgb(107, 156, 110);
+        transition: linear 0.5s;
+    }
+
+
+    /*ПРЕДЫДУЩИЙ ХОВЕР 111 МЕНЯЕТ ЦВЕТ И ЗАГОЛОВКОВ И КРЕСТИКОВ,
+    МЕНЯЕТ ОПЯТЬ НА ЧЕРНЫЙ */
+    .accordion-container:hover .cross {
+        color: rgb(0, 0, 0)
+        
+    }
+
+
+    /*ИЗМЕНЕНИЕ ЦВЕТА ОБЩЕГО КОНТЕЙНЕРА ПРИ НАВЕДЕНИИ */
+    .accordion-container:hover {
+        background-color: rgb(194, 193, 212);
+        transition: linear 0.5s;
+    }
+
+
+    /*ПЛАВНОЕ ПОЯВЛЕНИЕ КРЕСТИКОВ ПРИ НАВЕДЕНИИ НА ВЕСЬ БЛОК*/
+    .accordion-container:hover .cross {
+        visibility: visible;
+        /* transform: rotate(45deg);  */
+        transition: linear 0.3s;
+    }
+
+}
+
+
